@@ -17,4 +17,10 @@ public class Crew {
     private Long id;
     @Column(name = "name")
     private String name;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "family_id")
+    private Familly familyDetails;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "team_leader_Id")
+    private TeamLeader teamLeaderDetails;
 }

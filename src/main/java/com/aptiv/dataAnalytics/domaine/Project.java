@@ -1,11 +1,14 @@
 package com.aptiv.dataAnalytics.domaine;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.util.List;
 
 @Entity(name = "project")
 @AllArgsConstructor
@@ -19,4 +22,9 @@ public class Project {
     private Long id;
     @Column(name="name")
     private String name;
+    @OneToOne(mappedBy = "project", cascade = CascadeType.ALL)
+    private Data data;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "projectDetails")
+    @JsonIgnore
+    private List<Familly> familly;
 }

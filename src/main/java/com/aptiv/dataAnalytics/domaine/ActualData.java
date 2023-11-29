@@ -34,4 +34,6 @@ public class ActualData {
     private Double tlo;
     @Column(name = "dt")
     private Double dt;
+    @OneToOne(mappedBy = "actual_data")
+    private Data data;
 }

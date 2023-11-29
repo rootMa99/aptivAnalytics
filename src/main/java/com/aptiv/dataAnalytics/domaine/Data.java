@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.security.PrivateKey;
 import java.util.Date;
 
 
@@ -28,8 +29,18 @@ public class Data {
     @Column(name = "week")
     private String week;
     @Column(name = "date")
+    @Temporal(TemporalType.DATE)
     private Date date;
     @Column(name = "filter")
     private Boolean filter;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "project_id", referencedColumnName = "id")
+    private Project project;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "actual_data_id", referencedColumnName = "id")
+    private ActualData actualData;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "data_target_id", referencedColumnName = "id")
+    private DataTarget dataTarget;
 
 }

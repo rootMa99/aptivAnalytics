@@ -30,4 +30,6 @@ public class DataTarget {
     private Double scrap;
     @Column(name = "scrap_target")
     private Double scrapTarget;
+    @OneToOne(mappedBy = "data_target")
+    private Data data;
 }
