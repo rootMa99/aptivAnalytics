@@ -19,7 +19,7 @@ public class ActualData {
     @Column(name = "output")
     private Integer output;
     @Column(name = "prodh")
-    private Integer prodH;
+    private Double prodH;
     @Column(name="paidh")
     private Double paidH;
     @Column(name = "totalhc")
@@ -34,6 +34,6 @@ public class ActualData {
     private Double tlo;
     @Column(name = "dt")
     private Double dt;
-    @OneToOne(mappedBy = "actual_data")
+    @OneToOne(mappedBy = "actualData")
     private Data data;
 }
