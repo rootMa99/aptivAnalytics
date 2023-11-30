@@ -5,7 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.stereotype.Service;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -13,9 +12,9 @@ import org.springframework.stereotype.Service;
 @Setter
 public class ActDataExcel {
     private int output;
-    private double prodh;
-    private double paidh;
-    private double toatlHc;
+    private double prodH;
+    private double paidH;
+    private double toatlhc;
     private double hc;
     private double ot;
     private double ab;

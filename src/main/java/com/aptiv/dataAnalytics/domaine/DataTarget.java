@@ -16,6 +16,8 @@ public class DataTarget {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(name = "output_target")
+    private Double outputTarget;
     @Column(name = "prod_target")
     private Double prodTarget;
     @Column(name = "payed_target")

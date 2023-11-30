@@ -17,7 +17,6 @@ public class DataController {
 
     @PostMapping(path="/uploadData")
     public void saveDataToDataBase(MultipartFile file) throws IllegalAccessException {
-
         dataService.saveDataToDataBase(file);
     }
 }
