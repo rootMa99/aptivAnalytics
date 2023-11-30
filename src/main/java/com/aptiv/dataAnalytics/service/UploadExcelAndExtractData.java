@@ -1,6 +1,8 @@
 package com.aptiv.dataAnalytics.service;
 
+import com.aptiv.dataAnalytics.model.ActDataExcel;
 import com.aptiv.dataAnalytics.model.DataFromExcel;
+import com.aptiv.dataAnalytics.model.DataTargetExcel;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.Row;
@@ -39,6 +41,8 @@ public class UploadExcelAndExtractData {
                 Iterator<Cell> cellIterator = row.iterator();
                 int cellIndex = 0;
                 DataFromExcel dataFromExcel = new DataFromExcel();
+                ActDataExcel actDataExcel=new ActDataExcel();
+                DataTargetExcel dataTargetExcel=new DataTargetExcel();
                 while (cellIterator.hasNext()) {
                     Cell cell = cellIterator.next();
                     switch (cellIndex) {
@@ -145,7 +149,7 @@ public class UploadExcelAndExtractData {
                         case 12 -> {
                             if (cell.getCellType() == CellType.NUMERIC) {
                                 System.out.println("output " + cell.getNumericCellValue());
-                                dataFromExcel.getActDataExcel().setOutput((int) cell.getNumericCellValue());
+                                actDataExcel.setOutput((int) cell.getNumericCellValue());
 
                             } else {
                                 System.out.println("output " + cell.getCellType());
@@ -153,7 +157,7 @@ public class UploadExcelAndExtractData {
                         }
                         case 13 -> {
                             if (cell.getCellType() == CellType.NUMERIC) {
-                                dataFromExcel.getActDataExcel().setProdH(cell.getNumericCellValue());
+                                actDataExcel.setProdH(cell.getNumericCellValue());
                                 System.out.println("prod-h " + cell.getNumericCellValue());
                             } else {
                                 System.out.println("prod-h " + cell.getCellType());
@@ -161,7 +165,7 @@ public class UploadExcelAndExtractData {
                         }
                         case 14 -> {
                             if (cell.getCellType() == CellType.NUMERIC) {
-                                dataFromExcel.getActDataExcel().setPaidH(cell.getNumericCellValue());
+                                actDataExcel.setPaidH(cell.getNumericCellValue());
                                 System.out.println("paid-h " + cell.getNumericCellValue());
                             } else {
                                 System.out.println("paid-h " + cell.getCellType());
@@ -169,7 +173,7 @@ public class UploadExcelAndExtractData {
                         }
                         case 15 -> {
                             if (cell.getCellType() == CellType.NUMERIC) {
-                                dataFromExcel.getActDataExcel().setToatlhc(cell.getNumericCellValue());
+                                actDataExcel.setTotalhc(cell.getNumericCellValue());
                                 System.out.println("totalHc " + cell.getNumericCellValue());
                             } else {
                                 System.out.println("totalHc " + cell.getCellType());
@@ -177,7 +181,7 @@ public class UploadExcelAndExtractData {
                         }
                         case 16 -> {
                             if (cell.getCellType() == CellType.NUMERIC) {
-                                dataFromExcel.getActDataExcel().setHc(cell.getNumericCellValue());
+                                actDataExcel.setHc(cell.getNumericCellValue());
                                 System.out.println("hc " + cell.getNumericCellValue());
                             } else {
                                 System.out.println("hc " + cell.getCellType());
@@ -185,7 +189,7 @@ public class UploadExcelAndExtractData {
                         }
                         case 17 -> {
                             if (cell.getCellType() == CellType.NUMERIC) {
-                                dataFromExcel.getActDataExcel().setOt(cell.getNumericCellValue());
+                                actDataExcel.setOt(cell.getNumericCellValue());
                                 System.out.println("ot " + cell.getNumericCellValue());
                             } else {
                                 System.out.println("ot " + cell.getCellType());
@@ -193,7 +197,7 @@ public class UploadExcelAndExtractData {
                         }
                         case 18 -> {
                             if (cell.getCellType() == CellType.NUMERIC) {
-                                dataFromExcel.getActDataExcel().setAb(cell.getNumericCellValue());
+                                actDataExcel.setAb(cell.getNumericCellValue());
                                 System.out.println("ab " + cell.getNumericCellValue());
                             } else {
                                 System.out.println("ab " + cell.getCellType());
@@ -201,7 +205,7 @@ public class UploadExcelAndExtractData {
                         }
                         case 19 -> {
                             if (cell.getCellType() == CellType.NUMERIC) {
-                                dataFromExcel.getActDataExcel().setTlo(cell.getNumericCellValue());
+                                actDataExcel.setTlo(cell.getNumericCellValue());
                                 System.out.println("tlo " + cell.getNumericCellValue());
                             } else {
                                 System.out.println("tlo " + cell.getCellType());
@@ -209,7 +213,7 @@ public class UploadExcelAndExtractData {
                         }
                         case 20 -> {
                             if (cell.getCellType() == CellType.NUMERIC) {
-                                dataFromExcel.getActDataExcel().setDt(cell.getNumericCellValue());
+                                actDataExcel.setDt(cell.getNumericCellValue());
                                 System.out.println("dt " + cell.getNumericCellValue());
                             } else {
                                 System.out.println("dt " + cell.getCellType());
@@ -217,7 +221,7 @@ public class UploadExcelAndExtractData {
                         }
                         case 21 -> {
                             if (cell.getCellType() == CellType.NUMERIC) {
-                                dataFromExcel.getDataTargetExcel().setOutputTarget(cell.getNumericCellValue());
+                                dataTargetExcel.setOutputTarget(cell.getNumericCellValue());
                                 System.out.println("output target " + cell.getNumericCellValue());
                             } else {
                                 System.out.println("output target " + cell.getCellType());
@@ -225,7 +229,7 @@ public class UploadExcelAndExtractData {
                         }
                         case 22 -> {
                             if (cell.getCellType() == CellType.NUMERIC) {
-                                dataFromExcel.getDataTargetExcel().setProdTarget(cell.getNumericCellValue());
+                                dataTargetExcel.setProdTarget(cell.getNumericCellValue());
                                 System.out.println("prod target " + cell.getNumericCellValue());
                             } else {
                                 System.out.println("prod target " + cell.getCellType());
@@ -233,7 +237,7 @@ public class UploadExcelAndExtractData {
                         }
                         case 23 -> {
                             if (cell.getCellType() == CellType.NUMERIC) {
-                                dataFromExcel.getDataTargetExcel().setPayedTarget(cell.getNumericCellValue());
+                                dataTargetExcel.setPayedTarget(cell.getNumericCellValue());
                                 System.out.println("payed target " + cell.getNumericCellValue());
                             } else {
                                 System.out.println("payed target " + cell.getCellType());
@@ -241,7 +245,7 @@ public class UploadExcelAndExtractData {
                         }
                         case 24 -> {
                             if (cell.getCellType() == CellType.NUMERIC) {
-                                dataFromExcel.getDataTargetExcel().setHcTarget(cell.getNumericCellValue());
+                                dataTargetExcel.setHcTarget(cell.getNumericCellValue());
                                 System.out.println("hc target " + cell.getNumericCellValue());
                             } else {
                                 System.out.println("hc target " + cell.getCellType());
@@ -249,7 +253,7 @@ public class UploadExcelAndExtractData {
                         }
                         case 25 -> {
                             if (cell.getCellType() == CellType.NUMERIC) {
-                                dataFromExcel.getDataTargetExcel().setAbsTarget(cell.getNumericCellValue());
+                                dataTargetExcel.setAbsTarget(cell.getNumericCellValue());
                                 System.out.println("abs target " + cell.getNumericCellValue());
                             } else {
                                 System.out.println("abs target " + cell.getCellType());
@@ -257,7 +261,7 @@ public class UploadExcelAndExtractData {
                         }
                         case 26 -> {
                             if (cell.getCellType() == CellType.NUMERIC) {
-                                dataFromExcel.getActDataExcel().setDt(cell.getNumericCellValue());
+                                dataTargetExcel.setDtTarget(cell.getNumericCellValue());
                                 System.out.println("dt target " + cell.getNumericCellValue());
                             } else {
                                 System.out.println("dt target " + cell.getCellType());
@@ -265,7 +269,7 @@ public class UploadExcelAndExtractData {
                         }
                         case 27 -> {
                             if (cell.getCellType() == CellType.NUMERIC) {
-                                dataFromExcel.getDataTargetExcel().setScrap(cell.getNumericCellValue());
+                                dataTargetExcel.setScrap(cell.getNumericCellValue());
                                 System.out.println("scrap " + cell.getNumericCellValue());
                             } else {
                                 System.out.println("scrap " + cell.getCellType());
@@ -273,7 +277,7 @@ public class UploadExcelAndExtractData {
                         }
                         case 28 -> {
                             if (cell.getCellType() == CellType.NUMERIC) {
-                                dataFromExcel.getDataTargetExcel().setScrapTarget(cell.getNumericCellValue());
+                                dataTargetExcel.setScrapTarget(cell.getNumericCellValue());
                                 System.out.println("scrap target " + cell.getNumericCellValue());
                             } else {
                                 System.out.println("scrap target " + cell.getCellType());
@@ -285,6 +289,8 @@ public class UploadExcelAndExtractData {
                     }
                     cellIndex++;
                 }
+                dataFromExcel.setActDataExcel(actDataExcel);
+                dataFromExcel.setDataTargetExcel(dataTargetExcel);
                 dataFromExcels.add(dataFromExcel);
             }
         } catch (IOException e) {

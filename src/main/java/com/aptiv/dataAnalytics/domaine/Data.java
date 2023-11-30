@@ -6,7 +6,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.security.PrivateKey;
 import java.util.Date;
 
 
@@ -33,8 +32,8 @@ public class Data {
     private Date date;
     @Column(name = "filter")
     private Boolean filter;
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "project_id", referencedColumnName = "id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "project_id")
     private Project project;
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "actual_data_id", referencedColumnName = "id")

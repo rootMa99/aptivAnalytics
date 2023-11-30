@@ -22,8 +22,9 @@ public class Project {
     private Long id;
     @Column(name="name")
     private String name;
-    @OneToOne(mappedBy = "project", cascade = CascadeType.ALL)
-    private Data data;
+    @OneToMany(mappedBy = "project", cascade = CascadeType.ALL)
+    @JsonIgnore
+    private List<Data> data;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "projectDetails")
     @JsonIgnore
     private List<Familly> familly;

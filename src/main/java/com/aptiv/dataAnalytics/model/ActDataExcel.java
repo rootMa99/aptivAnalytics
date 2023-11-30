@@ -14,7 +14,7 @@ public class ActDataExcel {
     private int output;
     private double prodH;
     private double paidH;
-    private double toatlhc;
+    private double totalhc;
     private double hc;
     private double ot;
     private double ab;

@@ -90,6 +90,7 @@ public class DataServiceImpl implements DataService {
                         crew1.setName(dfe.getCrew());
                         crew1.setFamilyDetails(familly);
                         crew1.setTeamLeaderDetails(teamLeader);
+                        crewRepo.save(crew1);
                     }
                     dataRepo.save(data);
                 }
