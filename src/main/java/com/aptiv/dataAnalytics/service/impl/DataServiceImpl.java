@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -35,6 +36,7 @@ public class DataServiceImpl implements DataService {
         if (UploadExcelAndExtractData.isValidFormat(file)) {
             try {
                 List<DataFromExcel> dataFromExcels = UploadExcelAndExtractData.getDataFromEXcelFile(file.getInputStream());
+                List<Data>dataList=new ArrayList<>();
                 for (DataFromExcel dfe : dataFromExcels) {
                     Data data = new Data();
                     data.setPlant(dfe.getPlant());
@@ -92,8 +94,11 @@ public class DataServiceImpl implements DataService {
                         crew1.setTeamLeaderDetails(teamLeader);
                         crewRepo.save(crew1);
                     }
-                    dataRepo.save(data);
+                    //dataRepo.save(data);
+                    dataList.add(data);
                 }
+                dataRepo.saveAll(dataList);
+
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
