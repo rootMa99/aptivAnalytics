@@ -29,6 +29,14 @@ public class DataServiceImpl implements DataService {
     ProjectRepo projectRepo;
     FamilyRepo familyRepo;
     CrewRepo crewRepo;
+
+
+    @Override
+    public List<Data> getData() {
+
+        return dataRepo.findAll();
+    }
+
     @Override
     public void saveDataToDataBase(MultipartFile file) throws IllegalAccessException {
         ModelMapper mp = new ModelMapper();
