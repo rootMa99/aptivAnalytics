@@ -87,18 +87,18 @@ public class DataServiceImpl implements DataService {
                         project = projectRepo.save(project1);
                     }
                     data.setProject(project);
-                    Familly familly= familyRepo.findFamillyByName(dfe.getFamily());
-                    if (familly==null){
-                        Familly familly1= new Familly();
-                        familly1.setName(dfe.getFamily());
-                        familly1.setProjectDetails(project);
-                        familly= familyRepo.save(familly1);
+                    Family family = familyRepo.findFamillyByName(dfe.getFamily());
+                    if (family ==null){
+                        Family family1 = new Family();
+                        family1.setName(dfe.getFamily());
+                        family1.setProjectDetails(project);
+                        family = familyRepo.save(family1);
                     }
                     Crew crew= crewRepo.findCrewByName(dfe.getCrew());
                     if (crew==null){
                         Crew crew1= new Crew();
                         crew1.setName(dfe.getCrew());
-                        crew1.setFamilyDetails(familly);
+                        crew1.setFamilyDetails(family);
                         crew1.setTeamLeaderDetails(teamLeader);
                         crewRepo.save(crew1);
                     }

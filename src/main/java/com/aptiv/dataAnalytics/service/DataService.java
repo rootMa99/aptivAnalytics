@@ -7,6 +7,6 @@ import java.util.List;
 
 public interface DataService {
 
-    public void saveDataToDataBase(MultipartFile file) throws IllegalAccessException;
-    public List<Data> getData();
+    void saveDataToDataBase(MultipartFile file) throws IllegalAccessException;
+    List<Data> getData();
 }

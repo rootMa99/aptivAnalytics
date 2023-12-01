@@ -15,7 +15,7 @@ import java.util.List;
 @NoArgsConstructor
 @Setter
 @Getter
-public class Familly {
+public class Family {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

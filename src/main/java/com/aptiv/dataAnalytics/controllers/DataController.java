@@ -27,7 +27,7 @@ public class DataController {
         System.out.println(dataList.size());
         for (Data data:dataList){
             System.out.println(data.getActualData().getOutput()+" "+ data.getDataTarget().getDtTarget()
-                    +" "+data.getProject().getName()+" familly "+data.getProject().getFamilly().size());
+                    +" "+data.getProject().getName()+" familly "+data.getProject().getFamily().size());
         }
         return null;
     }

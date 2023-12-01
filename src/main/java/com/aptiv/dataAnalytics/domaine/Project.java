@@ -27,5 +27,5 @@ public class Project {
     private List<Data> data;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "projectDetails")
     @JsonIgnore
-    private List<Familly> familly;
+    private List<Family> family;
 }

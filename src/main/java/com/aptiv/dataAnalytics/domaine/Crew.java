@@ -19,7 +19,7 @@ public class Crew {
     private String name;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "family_id")
-    private Familly familyDetails;
+    private Family familyDetails;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "team_leader_Id")
     private TeamLeader teamLeaderDetails;
